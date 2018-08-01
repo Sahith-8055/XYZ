@@ -1,8 +1,7 @@
-end=int(input("Enter the end value "))
+end=int(input())
 sum=0
-i=1
-while i<=end:
+for i in range(1,end+1,1):
     sum+=i
-    i=i+1
 print(sum)
+    
     
