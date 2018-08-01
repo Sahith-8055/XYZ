@@ -1,6 +1,5 @@
 print("print Hello!")
-k=10
-while k>=2:
-    print("print",k)
-    k=k-2   
+for i in range(10,0,-2):
+    print("print",i)
+    
     
