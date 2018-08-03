@@ -9,7 +9,6 @@ def main():
     while abs(guess_1**2 - squ_apprx) >= epsilon_1 and guess_1 <= squ_apprx:
         guess_1 += step
         num_guesses += 1
-    print('num_guesses =', num_guesses)
     if abs(guess_1**2 - squ_apprx) >= epsilon_1:
         print('Failed on square root of', squ_apprx)
     else:
