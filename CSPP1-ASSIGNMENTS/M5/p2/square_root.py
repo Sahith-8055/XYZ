@@ -13,6 +13,6 @@ def main():
     if abs(guess_1**2 - squ_apprx) >= epsilon_1:
         print('Failed on square root of', squ_apprx)
     else:
-        print(guess_1, 'is close to the cube root of', squ_apprx)
+        print(guess_1)
 if __name__ == "__main__":
     main()
