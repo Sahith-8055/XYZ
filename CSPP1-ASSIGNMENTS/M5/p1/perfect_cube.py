@@ -8,6 +8,6 @@ def main():
     if cube_root**3 != abs(num_input):
         print(str(num_input) + " is not a perfect cube")
     else:
-        print("Cube root of " +  str(num_input) +  "is"  +  str(cube_root))
+        print(num_input,"is a perfect cube")
 if __name__ == "__main__":
     main()
