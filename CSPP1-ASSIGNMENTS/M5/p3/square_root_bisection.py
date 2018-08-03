@@ -12,6 +12,6 @@ def main():
         else:
             upper_bound = ans
         ans = (upper_bound + lower_bound)/2.0
-    print(str(ans) + ' is close to square root of ' + str(squar_root))
+    print(str(ans))
 if __name__ == "__main__":
     main()
