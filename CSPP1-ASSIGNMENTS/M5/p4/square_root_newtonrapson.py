@@ -8,6 +8,6 @@ def main():
     while abs(guess**2 - squar_root) >= epsilon:
         num_guesses += 1
         guess = guess - (((guess**2) - squar_root)/(2*guess))
-    print('Square root of ' + str(squar_root) + ' is about ' + str(guess))
+    print(str(guess))
 if __name__ == "__main__":
     main()
