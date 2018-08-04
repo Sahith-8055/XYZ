@@ -11,10 +11,11 @@ def main():
     int_input = int(input())
     add = 1
     i = 1
-    while i <= int_input:
-        rem = int_input%10
+    while i <= abs(int_input):
+        rem = (abs(int_input))%10
         add = add*rem
-        int_input = int_input//10
+        int_input = abs(int_input)//10
+        i = i + 1
     print(add)
 if __name__ == "__main__":
     main()
