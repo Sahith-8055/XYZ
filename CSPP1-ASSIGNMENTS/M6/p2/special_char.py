@@ -10,7 +10,7 @@ def main():
     str_input = input()
     for i in str_input:
         if i in '!@#$%^&*':
-            print(" ")
+            print(" ", end='')
         else:
             print(i, end='')
 if __name__ == "__main__":
