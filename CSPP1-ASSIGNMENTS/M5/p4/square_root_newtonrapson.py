@@ -4,9 +4,7 @@ def main():
     squar_root = int(input())
     epsilon = 0.01
     guess = squar_root/2.0
-    num_guesses = 0
     while abs(guess**2 - squar_root) >= epsilon:
-        num_guesses += 1
         guess = guess - (((guess**2) - squar_root)/(2*guess))
     print(str(guess))
 if __name__ == "__main__":
