@@ -12,6 +12,6 @@ def main():
         if i in '!@#$%^&*':
             print(" ")
         else:
-            print(str_input)
+            print(i, end='')
 if __name__ == "__main__":
     main()
