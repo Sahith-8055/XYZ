@@ -11,7 +11,7 @@ def main():
     int_input = int(input())
     if int_input == 0:
         print(0)
-    else:    
+    else:
         add = 1
         i = 1
         while i <= abs(int_input):
