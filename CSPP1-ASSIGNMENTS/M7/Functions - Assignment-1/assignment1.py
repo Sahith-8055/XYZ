@@ -9,7 +9,7 @@ def paying_debt(balance, annual_interest_rate, monthly_paymentrate):
         monthly_unpaid_balance = updated_balance - minimum_monthly_payment
         updated_balance = monthly_unpaid_balance + (monthly_unpaid_balance * monthly_interestrate)
         month_inp += 1
-    print("Remaining Balance:", round(updated_balance, 2)) 
+    print("Remaining balance:", round(updated_balance, 2)) 
 def main():
     """Writing inside this function"""
     data = input()
