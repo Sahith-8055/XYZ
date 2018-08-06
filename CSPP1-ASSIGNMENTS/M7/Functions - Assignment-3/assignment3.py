@@ -20,7 +20,7 @@ def paying_debt(balance, annual_interest_rate):
             monthly_payment_upper_value = guess_inp
             new_balance = balance
         else:
-            return round(guess_inp,2)
+            return round(guess_inp, 2)
         guess_inp = (monthly_payment_lower_value + monthly_payment_upper_value)/2
 def main():
     """Writing inside this function"""
