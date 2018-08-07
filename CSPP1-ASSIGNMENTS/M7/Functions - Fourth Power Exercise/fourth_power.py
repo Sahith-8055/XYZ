@@ -1,24 +1,20 @@
-# Exercise: fourth power
-# Write a Python function, fourthPower, that takes in one number and returns that value raised to the fourth power.
-# You should use the square procedure that you defined in an earlier exercise exercise (you don't need to redefine square in this box;
-# This function takes in one number and returns one number.
-def square(x):
+"""Exercise: fourth power"""
+def square(x_inp):
+    """square"""
+    return x_inp**2
+def fourth_power(x_inp):
     '''
     x: int or float.
     '''
-   return x**2
-def fourthPower(x):
-    '''
-    x: int or float.
-    '''
-    return x**4
+    return x_inp**4
 def main():
+    """Writing inside this main function"""
     data = input()
     data = float(data)
     temp = str(data).split('.')
-    if(temp[1] == '0'):
-        print(fourthPower(int(float(str(data)))))
+    if temp[1] == '0':
+        print(fourth_power(int(float(str(data)))))
     else:
-        print(fourthPower(data))
+        print(fourth_power(data))
 if __name__ == "__main__":
     main()
