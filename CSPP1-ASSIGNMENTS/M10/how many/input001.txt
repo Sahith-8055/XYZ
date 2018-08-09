@@ -1,0 +1,7 @@
+6
+a aardvark
+b baboon
+c coati
+d donkey
+d dog
+d dingo
