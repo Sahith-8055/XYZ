@@ -23,13 +23,15 @@ def get_word_score(word, n):
     for alphabet in word:
     	if alphabet in SCRABBLE_LETTER_VALUES:
     		count = count + SCRABBLE_LETTER_VALUES[alphabet]
-    return count * n
+    if n == len(word):
+     	return (count * n) + 50
+    return count * n 	
 def main():
     '''
     Main function for the given problem
     '''
     data = input()
     data = data.split()
-    print(get_word_score(data[0], len(data[0])))
+    print(get_word_score(data[0], int(data[1])))
 if __name__ == "__main__":
     main()
