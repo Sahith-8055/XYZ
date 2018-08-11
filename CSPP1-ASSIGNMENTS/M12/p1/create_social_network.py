@@ -26,14 +26,9 @@ def create_social_network(data):
         Empty dictionary is not None, it is a dictionary with no keys
     '''
     social_net_dict = {}
-    for i in data:
-    	import re
-    	res = re.split('follows|\n',data)
-    	social_net_dict = dict((k,v) for k,v in zip(res[::2],res[1::2]))
-    	"""if res[0] not in string_dict:
-    		string_dict[res[0]] = [res[1]]
-    	elif res[1] not in string_dict[res[0]]:
-    		string_dict[res[0]].append(res[1])"""    		
+    import re
+    res = re.split('follows|\n', data)
+    social_net_dict = dict((k, v) for k, v in zip(res[::2], res[1::2]))
     return social_net_dict
 def main():
     '''
