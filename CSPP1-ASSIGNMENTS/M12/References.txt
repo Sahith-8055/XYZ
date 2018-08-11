@@ -1,0 +1,5 @@
+https://stackoverflow.com/questions/1024847/add-new-keys-to-a-dictionary
+https://docs.python.org/3/library/re.html
+https://www.tutorialspoint.com/python/dictionary_update.htm
+https://stackoverflow.com/questions/453576/is-there-a-fast-way-to-generate-a-dict-of-the-alphabet-in-python#
+https://stackoverflow.com/questions/6416131/python-add-new-item-to-dictionary
