@@ -72,7 +72,7 @@ def hand_rank(hand):
         return(2, two_pair(ranks), ranks)
     if kind(ranks, 2):
         return(1, kind(ranks, 2), ranks)
-    return (0, ranks)z 
+    return (0, ranks)
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
