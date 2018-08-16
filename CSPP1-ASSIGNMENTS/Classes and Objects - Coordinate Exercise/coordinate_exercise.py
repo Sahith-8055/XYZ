@@ -12,15 +12,17 @@ class Coordinate(object):
         return self.y
     def __str__(self):
         return '<' + str(self.getX()) + ',' + str(self.getY()) + '>'
-    def __repr__(self):
-        return 'Coordinate(' + str(self.getX()) + ',' + str(self.getY()) + ')'
-    def __eq__(self,other):
+    def __eq__(self, other):
         assert type(other) == type(self)
         if self.getX() == other.getX():
             if self.getY() == other.getY():
                 return True
         return False
+    def __repr__(self):
+        return 'Coordinate(' + str(self.getX()) + ',' + str(self.getY()) + ')'    
 x_new = Coordinate(10,20)
+print(x_new.__eq__(10,20))
+print(x_new.__eq__(5,10))
 print(x_new.__repr__())
 # Your task is to define the following two methods for the Coordinate class:
 # Add an __eq__ method that returns True if coordinates refer to same point in the plane (i.e., have the same x and y coordinate).
