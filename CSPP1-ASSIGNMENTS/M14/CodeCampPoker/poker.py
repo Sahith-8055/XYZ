@@ -78,7 +78,7 @@ def hand_rank(hand):
     if kind(ranks,3):
         return (3, kind(ranks,3), ranks)
     if two_pair(ranks):
-        return(2, two_pair(ranks), ranks)    
+        return(2, two_pair(ranks), ranks) 
     if kind(ranks,2):
         return(1, kind(ranks,2), ranks)
     return (0, ranks)    
@@ -109,5 +109,3 @@ if __name__ == "__main__":
         HANDS.append(ha)
     # test the poker function to see how it works
     print(' '.join(poker(HANDS)))
-    for h in HANDS:
-        print(card_ranks(h))
