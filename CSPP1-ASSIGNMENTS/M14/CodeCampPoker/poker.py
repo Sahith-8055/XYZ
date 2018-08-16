@@ -26,12 +26,11 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    for i in range(len(hand)):
-        suit = hand[i]
-        for h_inp in hand:
-            if suit[1] != h_inp[1]:
-                return False
-        return True
+    suit = hand[0]
+    for h_inp in hand:
+        if suit[1] != h_inp[1]:
+            return False
+    return True
 def four_of_a_kind(hand):
     for i in range(len(hand)):
         suit = hand[i]
