@@ -90,11 +90,12 @@ def one_pair(hand):
     face_values.sort()
     face = set(face_values)
     if len(face) == 4:
-        face1 = max(face)
+        '''face1 = max(face)
         lis1[face1] = hand
         lis2 = list(lis1.values())
         if lis2 == HANDS:
             hand = lis1[max(lis1.keys())]
+        '''    
         return True
     return False
 def hand_rank(hand):
