@@ -66,22 +66,22 @@ def hand_rank(hand):
     '''
     ranks = card_ranks(hand)
     if is_straight(ranks) and is_flush(hand):
-        return (8,ranks)
+        return (8, ranks)
     if kind(ranks,4):
-        return (7,kind(ranks,4),ranks)
+        return (7, kind(ranks,4), ranks)
     if kind(ranks,3) and kind(ranks,2):
-        return (6,(kind(ranks,3),kind(ranks,2)))
+        return (6, (kind(ranks,3), kind(ranks,2)))
     if is_flush(hand):
-        return(5,ranks)
+        return(5, ranks)
     if is_straight(ranks):
-        return(4,ranks)          
+        return(4, ranks)          
     if kind(ranks,3):
-        return (3,kind(ranks,3),ranks)
+        return (3, kind(ranks,3), ranks)
     if two_pair(ranks):
-        return(2,two_pair(ranks),ranks)    
+        return(2, two_pair(ranks), ranks)    
     if kind(ranks,2):
-        return(1,kind(ranks,2),ranks)
-    return (0,ranks)    
+        return(1, kind(ranks,2), ranks)
+    return (0, ranks)    
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
