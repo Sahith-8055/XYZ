@@ -31,7 +31,7 @@ def is_flush(hand):
         for h_inp in hand:
             if suit[1] != h_inp[1]:
                 return False
-    return True
+        return True
 def four_of_a_kind(hand):
     for i in range(len(hand)):
         suit = hand[i]
