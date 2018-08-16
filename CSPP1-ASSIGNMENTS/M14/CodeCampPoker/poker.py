@@ -13,17 +13,6 @@ def is_straight(ranks):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    '''
-    card_values = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
-    face_values = []
-    for h_inp in hand:
-        face_values.append(card_values[h_inp[0]])
-    face_values.sort()
-    for i in range(0, len(face_values)-1):
-        if  face_values[i+1] - face_values[i] != 1:
-            return False
-    return True
-    '''
     return len(set(ranks)) == 5 and (max(ranks)-min(ranks) == 4)
 def is_flush(hand):
     '''
@@ -41,21 +30,23 @@ def is_flush(hand):
     return True
 
 def card_ranks(hand):
-    ranks = sorted(['--23456789TJQKA'.index(c) for c,s in hand],reverse=True)
+    '''Input is hand'''
+    ranks = sorted(['--23456789TJQKA'.index(c) for c, s in hand], reverse=True)
     return ranks
 
-def kind(ranks,n):
-    for r in ranks:
-        if ranks.count(r) == n:
-            return r
+def kind(ranks, n_inp):
+    '''Inputs are ranks and number'''
+    for r_inp in ranks:
+        if ranks.count(r_inp) == n_inp:
+            return r_inp
     return 0
 def two_pair(ranks):
-    one = kind(ranks,2)
-    two = kind(sorted(ranks),2)
+    '''Input is ranks'''
+    one = kind(ranks, 2)
+    two = kind(sorted(ranks), 2)
     if one and two:
-        return (one,two)
+        return (one, two)
     return None
-
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -67,21 +58,21 @@ def hand_rank(hand):
     ranks = card_ranks(hand)
     if is_straight(ranks) and is_flush(hand):
         return (8, ranks)
-    if kind(ranks,4):
-        return (7, kind(ranks,4), ranks)
-    if kind(ranks,3) and kind(ranks,2):
-        return (6, (kind(ranks,3), kind(ranks,2)))
+    if kind(ranks, 4):
+        return (7, kind(ranks, 4), ranks)
+    if kind(ranks, 3) and kind(ranks, 2):
+        return (6, (kind(ranks, 3), kind(ranks, 2)))
     if is_flush(hand):
         return(5, ranks)
     if is_straight(ranks):
-        return(4, ranks)          
-    if kind(ranks,3):
-        return (3, kind(ranks,3), ranks)
+        return(4, ranks)
+    if kind(ranks, 3):
+        return (3, kind(ranks, 3), ranks)
     if two_pair(ranks):
-        return(2, two_pair(ranks), ranks) 
-    if kind(ranks,2):
-        return(1, kind(ranks,2), ranks)
-    return (0, ranks)    
+        return(2, two_pair(ranks), ranks)
+    if kind(ranks, 2):
+        return(1, kind(ranks, 2), ranks)
+    return (0, ranks)z 
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
