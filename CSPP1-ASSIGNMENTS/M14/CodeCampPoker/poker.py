@@ -13,12 +13,12 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    card_values = {'T':10,'J':11,'Q':12,'K':13,'A':14,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}
+    card_values = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
     face_values = []
-    for h in hand:
-        face_values.append(card_values[h[0]])
+    for h_inp in hand:
+        face_values.append(card_values[h_inp[0]])
     face_values.sort()
-    for i in range(0,len(face_values)-1):
+    for i in range(0, len(face_values)-1):
         if  face_values[i+1] - face_values[i] != 1:
             return False
     return True
@@ -37,6 +37,7 @@ def is_flush(hand):
             return False
     return True
 def four_of_a_kind(hand):
+    '''To find whether the hand is four of a kind'''
     for i in range(len(hand)):
         suit = hand[i]
         count = 0
@@ -47,8 +48,8 @@ def four_of_a_kind(hand):
             return True
     return False
 def full_house(hand):
-    card_values = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, '2':2, '3':3,
-                    '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
+    '''To check whether the hand is full house (or) not'''
+    card_values = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
     face_values = []
     for h_in in hand:
         face_values.append(card_values[h_in[0]])
@@ -57,7 +58,8 @@ def full_house(hand):
     if len(face) == 2:
         return True
     return False
-def Three_of_akind(hand):
+def three_of_akind(hand):
+    '''To check whether the hand is three of a kind'''
     for i in range(len(hand)):
         suit = hand[i]
         count = 0
@@ -67,9 +69,9 @@ def Three_of_akind(hand):
         if count == 3:
             return True
     return False
-def Two_pair(hand):
-    card_values = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, '2':2, '3':3,
-                    '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
+def two_pair(hand):
+    '''To check whether it is two pair (or) not'''
+    card_values = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
     face_values = []
     for h_in in hand:
         face_values.append(card_values[h_in[0]])
@@ -78,9 +80,9 @@ def Two_pair(hand):
     if len(face) == 3:
         return True
     return False
-def one_pair(hand):   
-    card_values = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, '2':2, '3':3,
-                    '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
+def one_pair(hand):
+    '''To find if the hand contains a pair (or) not'''
+    card_values = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
     face_values = []
     for h_in in hand:
         face_values.append(card_values[h_in[0]])
@@ -114,19 +116,19 @@ def hand_rank(hand):
     if is_straight(hand) and is_flush(hand):
         return 8
     elif four_of_a_kind(hand):
-        return 7 
+        return 7
     elif full_house(hand):
-        return 6       
+        return 6
     elif is_flush(hand):
         return 5
     elif is_straight(hand):
         return 4
-    elif Three_of_akind(hand):
+    elif three_of_akind(hand):
         return 3
-    elif Two_pair(hand):
+    elif two_pair(hand):
         return 2
     elif one_pair(hand):
-        return 1               
+        return 1
     else:
         return 0
 def poker(hands):
