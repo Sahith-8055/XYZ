@@ -13,10 +13,16 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    if all([True if c in '2345A' else False for c, s in hand]):
-        return True
-    card_values = set(['--23456789TJQKA'.index(c) for c, s in hand])
-    return len(card_values) == 5 and (max(card_values) - min(card_values) == 4)
+    card_values = {'T':10,'J':11,'Q':12,'K':13,'A':14,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}
+    face_values = []
+    for h in hand:
+        face_values.append(card_values[h[0]])
+    face_values.sort()
+    print(face_values)
+    for i in range(0,len(face_values)-1):
+        if  face_values[i+1] - face_values[i] != 1:
+            return False
+    return True
 def is_flush(hand):
     '''
         How do we find out if the given hand is a flush?
