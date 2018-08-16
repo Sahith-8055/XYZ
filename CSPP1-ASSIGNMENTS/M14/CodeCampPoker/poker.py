@@ -80,6 +80,7 @@ def two_pair(hand):
     if len(face) == 3:
         return True
     return False
+lis1 = {}    
 def one_pair(hand):
     '''To find if the hand contains a pair (or) not'''
     card_values = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
