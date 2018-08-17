@@ -23,7 +23,7 @@ def similarity(dict1, dict2):
         sum2 += dict3[k][1]**2
         denominator = math.sqrt(sum1) * math.sqrt(sum2)
     similarity1 = (numerator / denominator)
-    return similarity1
+    return round(similarity1,1)
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
