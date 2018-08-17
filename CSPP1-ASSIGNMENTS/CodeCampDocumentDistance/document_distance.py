@@ -38,10 +38,10 @@ def main():
     input2 = input().lower()
     str1, str2 = '', ''
     for i in input1:
-        if word[i] not in '1234567890!@#$%^&*()_-+?.:,;':
+        if i not in '1234567890!@#$%^&*()_-+?.:,;':
             str1 += i
     for i in input2:
-        if word[i] not in '1234567890!@#$%^&*()_-+?.:,;':
+        if i not in '1234567890!@#$%^&*()_-+?.:,;':
             str2 += i        
     print(similarity(input1, input2))
 if __name__ == '__main__':
