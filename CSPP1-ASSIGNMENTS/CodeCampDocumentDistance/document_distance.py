@@ -14,15 +14,14 @@ def similarity(dict1, dict2):
     for word in list3:
         if word not in load_stopwords(FILENAME).keys():
             for i in range(len(word)):
-                if word[i] not in '1234567890!@#$%^&*()_-+?.':
-                    dict3[word] = [dict1.count(word), dict2.count(word)]
+                if word[i] not in '1234567890!@#$%^&*()_-+?.:,':
+                    dict3[word] = (dict1.count(word), dict2.count(word))
     numerator, add1, add2 = 0, 0, 0
     for k in dict3:
         numerator += (dict3[k][0]*dict3[k][1])
         add1 += dict3[k][0]**2
         add2 += dict3[k][1]**2
     denominator = math.sqrt(add1) * math.sqrt(add2)
-    #similarity1 = (numerator / denominator)
     return numerator / denominator
 def load_stopwords(filename):
     '''
