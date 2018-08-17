@@ -39,10 +39,12 @@ def main():
     str1, str2 = '', ''
     for i in input1:
         if i not in '1234567890!@#$%^&*()_-+?.:,;':
-            str1 += i
+            if i not in "'":
+                str1 += i
     for i in input2:
         if i not in '1234567890!@#$%^&*()_-+?.:,;':
-            str2 += i        
+            if i not in "'":
+                str2 += i        
     print(similarity(input1, input2))
 if __name__ == '__main__':
     main()
