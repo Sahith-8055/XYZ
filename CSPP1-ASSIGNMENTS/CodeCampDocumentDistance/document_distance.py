@@ -18,9 +18,9 @@ def similarity(dict1, dict2):
         for j in i:
             if j not in '!@#$%^&*()_+-=,.?1234567890':
                 if j not in "'":
-                    list2 += j                
-    list1 = dict1.split(' ')
-    list2 = dict2.split(' ')
+                    list2 += j
+    list1 = dict1.split()
+    list2 = dict2.split()
     list3 = list1 + list2
     dict3 = {}
     for word in list3:
@@ -47,7 +47,7 @@ def main():
         take two inputs and call the similarity function
     '''
     input1 = input().lower()
-    input2 = input().lower()        
+    input2 = input().lower()
     print(similarity(input1, input2))
 if __name__ == '__main__':
     main()
