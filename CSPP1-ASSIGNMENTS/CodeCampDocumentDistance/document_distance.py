@@ -16,11 +16,13 @@ def similarity(dict1, dict2):
             for i in range(len(word)):
                 if word[i] not in '1234567890!@#$%^&*()_-+?.':
                     dict3[word] = (dict1.count(word), dict2.count(word))
-    numerator, denominator = 0, 0
+    numerator, add1, add2 = 0, 0, 0
     for k in dict3:
-        numerator += (dict3[k][0]*dict3[k][1]) 
-        denominator += (math.sqrt(dict3[k][0]**2)) * (math.sqrt(dict3[k][1]**2))
-    similarity1 = (numerator / denominator)
+        numerator += (dict3[k][0]*dict3[k][1])
+        add1 += dict3[k][0]**2
+        add2 += dict3[k][1]**2
+        denominator = math.sqrt(add1) * math.sqrt(add2)
+    similarity1 = numerator / denominator
     return similarity1
 def load_stopwords(filename):
     '''
