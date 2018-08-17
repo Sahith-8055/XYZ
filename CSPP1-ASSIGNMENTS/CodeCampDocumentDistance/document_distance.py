@@ -16,9 +16,9 @@ def similarity(dict1, dict2):
                 if j not in "'":
                     list_2 = list_2 + j
 
-    lis1 = list_1.split()
-    lis2 = list_2.split()
-    lis3 = lis1 + lis2
+    list_1 = list_1.split()
+    list_2 = list_2.split()
+    lis3 = lis_1 + lis_2
     dict3 = {}
     for word in lis3:
         if word not in load_stopwords(FILENAME).keys():

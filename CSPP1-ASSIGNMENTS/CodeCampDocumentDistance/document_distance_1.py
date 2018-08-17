@@ -2,37 +2,37 @@
     Document Distance - A detailed description is given in the PDF
 '''
 import math
-FILENAME = "stopwords.txt"
+import re
+stopwords = "stopwords.txt"
+def cleanup_words(input1):
+    reg = re.compile('[^a-z]')
+    input1 = input1.lower()
+    input1 = [reg.sub('',w.strip()) for w in input1.split(' ')]
+    return input1
+def remove_stopwords(input1,input2):
+    d={}
+    d=load_stopwords(stopwords)
+    word_list1 = cleanup_words(input1)
+    word_list2 = cleanup_words(input2)
+    word_list  = word_list1 + word_list2
+    dictionary = {}
+    for  word in word_list:
+        if word not in d and len(word) > 0:
+            dictionary[word] = (word_list1.count(word),word_list2.count(word))
+    return dictionary        
 def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    list1 = ''
-    for i in dict1:
-        for j in i:
-            if j not in '!@#$%^&*()_+-=,.?1234567890':
-                if j not in "'":
-                    list1 += j
-    list2 = ''
-    for i in dict2:
-        for j in i:
-            if j not in '!@#$%^&*()_+-=,.?1234567890':
-                if j not in "'":
-                    list2 += j
-    list1 = dict1.split()
-    list2 = dict2.split()
-    list3 = list1 + list2
-    dict3 = {}
-    for word in list3:
-        if word not in load_stopwords(FILENAME).keys():
-            dict3[word] = (dict1.count(word), dict2.count(word))
-    numerator, add1, add2 = 0, 0, 0
-    for k in dict3:
-        numerator += (dict3[k][0]*dict3[k][1])
-        add1 += dict3[k][0]**2
-        add2 += dict3[k][1]**2
-    denominator = math.sqrt(add1) * math.sqrt(add2)
-    return numerator / denominator
+    dictionary = {}
+    dictionary = remove_stopwords(dict1,dict2)
+    numerator, denominator1, denominator2 = 0, 0, 0
+    for d in dictionary.values():    
+        numerator += d[0] * d[1]
+        denominator1 += (d[0]**2)
+        denominator2 += (d[1]**2)
+        denominator = math.sqrt(denominator1) * math.sqrt(denominator2)
+    return (numerator / denominator)
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
