@@ -42,7 +42,7 @@ def chooseWord(wordlist):
 # Load the list of words into the variable wordlist
 # so that it can be accessed from anywhere in the program
 wordlist = loadWords()
-def isWordGuessed(secretWord, lettersGuessed):
+def isWordGuessed(secret_word, letters_guessed):
     '''
     secretWord: string, the word the user is guessing
     lettersGuessed: list, what letters have been guessed so far
