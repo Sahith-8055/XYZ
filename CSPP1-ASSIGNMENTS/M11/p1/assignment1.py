@@ -20,10 +20,10 @@ def get_word_score(word, n):
     's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10}
     count = 0
     for alphabet in word:
-    	if alphabet in SCRABBLE_LETTER_VALUES:
-    		count = count + SCRABBLE_LETTER_VALUES[alphabet]
+        if alphabet in SCRABBLE_LETTER_VALUES:
+            count = count + SCRABBLE_LETTER_VALUES[alphabet]
     if n == len(word):
-     	return (count * n) + 50
+        return (count * n) + 50
     return count * n
 def main():
     '''
