@@ -6,10 +6,10 @@ def mult_matrix(m1, m2):
         and return None
         error message should be "Error: Matrix shapes invalid for mult"
     '''
-    result = [[0 for rows in range(len(m1))] for columns in range(len(m1[0]))]
+    result = [[0 for rows in range(len(m1))] for columns in range(len(m2[1]))]
     if len(m1[0]) == len(m2):
         for i in range(len(m1)):
-            for j in range(len(m1[0])):
+            for j in range(len(m2[1])):
                 for k in range(len(m2)):
                     result[i][j] += int(m1[i][k]) * int(m2[k][j])
         return result
