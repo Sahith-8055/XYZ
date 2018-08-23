@@ -38,15 +38,15 @@ def read_matrix():
         print an error message and return None
         error message should be "Error: Invalid input for the matrix"
     '''
-    # matrix = []
-    # for i in range(0, int(lis[0])):
-    #     column = input().split(' ')
-    #     if len(column) == int(lis[1]):
-    #         matrix.append(column)
-    #     else:
-    #         print('Error: Invalid input for the matrix')
-    #         return
-    # return matrix
+    matrix = []
+    for i in range(0, int(lis[0])):
+        column = input().split(' ')
+        if len(column) == int(lis[1]):
+            matrix.append(column)
+        else:
+            print('Error: Invalid input for the matrix')
+            return
+    return matrix
 def main():
     '''Writing inside this function'''
     # read matrix 1
