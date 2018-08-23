@@ -9,9 +9,9 @@ def mult_matrix(matrix_1, matrix_2):
     '''
     result = [[0 for rows in range(len(matrix_1))] for columns in range(len(matrix_2[1]))]
     if len(matrix_1[0]) == len(matrix_2):
-        for r,c in enumerate(matrix_1):
+        for i in range(len(matrix_1)):
             for j in range(len(matrix_2[1])):
-                for k,l in enumerate(matrix_2):
+                for k in range(len(matrix_2)):
                     result[i][j] += int(matrix_1[i][k]) * int(matrix_2[k][j])
         return result
     print("Error: Matrix shapes invalid for mult")
