@@ -40,7 +40,7 @@ def read_matrix(lis):
         error message should be "Error: Invalid input for the matrix"
     '''
     matrix = []
-    for i in range(0, int(lis[0])):
+    for _ in range(0, int(lis[0])):
         column = input().split(' ')
         if len(column) == int(lis[1]):
             matrix.append(column)
