@@ -9,7 +9,7 @@ def mult_matrix(matrix1, matrix2):
     '''
     m1_rows = len(matrix1)
     m1_columns = len(matrix2[1])
-    m2_rows = len(matrix2) 
+    m2_rows = len(matrix2)
     if len(matrix1) == len(matrix2[0]) and len(matrix1[0]) == len(matrix2):
         result = [[0 for row in range(len(matrix1))] for col in range(len(matrix2[1]))]
         for i in range(m1_rows):
@@ -27,7 +27,8 @@ def add_matrix(matrix1, matrix2):
        and return None
        error message should be "Error: Matrix shapes invalid for addition"
     '''
-    for i in range(len(matrix1)):
+    m1_rows = len(matrix1)
+    for i in range(m1_rows):
         if len(matrix1) == len(matrix2) and len(matrix1[i]) == len(matrix2[i]):
             result = [[0 for row in range(len(matrix1))] for col in range(len(matrix2[0]))]
             result = [[int(matrix1[i][j]) + int(matrix2[i][j])for j in range(len(matrix1[0]))]for i in range(len(matrix1))]
