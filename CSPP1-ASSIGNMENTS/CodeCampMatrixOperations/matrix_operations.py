@@ -7,11 +7,14 @@ def mult_matrix(matrix1, matrix2):
        and return None
        error message should be "Error: Matrix shapes invalid for mult"
     '''
+    m1_rows = len(matrix1)
+    m1_columns = len(matrix2[1])
+    m2_rows = len(matrix2) 
     if len(matrix1) == len(matrix2[0]) and len(matrix1[0]) == len(matrix2):
         result = [[0 for row in range(len(matrix1))] for col in range(len(matrix2[1]))]
-        for i in range(len(matrix1)):
-            for j in range(len(matrix2[1])):
-                for k in range(len(matrix2)):
+        for i in range(m1_rows):
+            for j in range(m1_columns):
+                for k in range(m2_rows):
                     result[i][j] += int(matrix1[i][k]) * int(matrix2[k][j])
         return result
     print("Error: Matrix shapes invalid for mult")
