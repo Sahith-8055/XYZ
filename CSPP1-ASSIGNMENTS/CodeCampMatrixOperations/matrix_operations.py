@@ -56,10 +56,8 @@ def main():
     input_ = input()
     list2 = input_.split(',')
     matrix2 = read_matrix(list2)
-    # add matrix 1 and matrix 2
-    print(add_matrix(matrix1, matrix2))
-    # multiply matrix 1 and matrix 2
-    print(mult_matrix(matrix1, matrix2))
-    #ar = list(map(int, input().rstrip().split()))    
+    if matrix1 != None and matrix2 != None:
+        print(add_matrix(matrix1, matrix2))
+        print(mult_matrix(matrix1, matrix2))    
 if __name__ == '__main__':
     main()
