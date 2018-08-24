@@ -10,7 +10,7 @@ def PlayGame(grid):
         Winner.append(grid[0][0])
     if grid[2][0] == grid[1][1] == grid[0][2]:
         Winner.append(grid[2][0])
-    if Winner = []:
+    if Winner == []:
         print("draw")
         return None
     if len(Winner) == 1:
