@@ -25,7 +25,7 @@ def PlayGame(grid):
 def main():
     matrix_1 = []
     for _ in range(0,3):
-        column = input.split(' ')
+        column = input().split(' ')
         matrix_1.append(column)
     PlayGame(matrix_1)    
 if __name__ == '__main__':
