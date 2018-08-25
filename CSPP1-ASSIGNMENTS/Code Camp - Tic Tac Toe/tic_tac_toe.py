@@ -2,16 +2,27 @@
 def play_game(grid):
     '''To play the Tic Tac Toe Game'''
     result_winner = []
+    grid_size = len(grid[0])
     for row in grid:
-        if row[0] == row[1] == row[2]:
-            result_winner.append(row[0])
-    for j in range(0, 3):
-        if grid[0][j] == grid[1][j] == grid[2][j]:
-            result_winner.append(grid[0][j])
-    if grid[0][0] == grid[1][1] == grid[2][2]:
-        result_winner.append(grid[0][0])
-    if grid[2][0] == grid[1][1] == grid[0][2]:
-        result_winner.append(grid[2][0])
+        if len(set(row)) == 1:
+            result_winner.append(row[0])       
+    list1 = []
+    for i in range(0, grid_size):
+        for j in range(0, grid_size):
+            list1.append(grid[j][i])
+        if len(set(list1)) == 1:
+            result_winner.append(grid[j][i])     
+    list2 = []        
+    for i in range(0, grid_size):
+        list2.append(grid[i][i])
+        if len(set(list2)) == 1:
+            result_winner.append(grid[i][i])
+    list3 = []        
+    for i in range(0, grid_size):
+        list3.append(grid[(grid_size - 1)-i][i])
+        if len(set(list3)) == 1:
+            result_winner.append(grid[(grid_size - 1)-i][i])
+    result_winner = list(set(result_winner))                   
     if result_winner == []:
         print("draw")
         return None
@@ -26,8 +37,9 @@ def play_game(grid):
         return None
 def main():
     '''Main function'''
+    n = int(input())
     matrix_1 = []
-    for _ in range(0, 3):
+    for _ in range(0, n):
         column = input().split(' ')
         matrix_1.append(column)
     play_game(matrix_1)
