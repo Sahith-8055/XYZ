@@ -36,6 +36,5 @@ def main():
         sudoku.append(row)
     # call solution function and print result to console
     print(check_sudoku(sudoku))
-    print(count(sudoku))
 if __name__ == '__main__':
     main()
