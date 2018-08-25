@@ -17,10 +17,15 @@ def check_sudoku(sudoku):
                 return False
     return True
 def count(sudoku):
+    transpose = zip(*sudoku)
     for i in sudoku:
         for j in i:
             if i.count(j) != 1 and i.count(j) >= 1:
                 return False
+    for k in transpose:
+        for l in k:
+            if k.count(l) != 1 and k.count(l) >= 1:
+                return False        
     return True
 def main():
     '''
