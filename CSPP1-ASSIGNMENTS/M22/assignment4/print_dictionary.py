@@ -4,8 +4,12 @@ frequency of each word. Format of the printing should be one key per line and se
 the key and frequency with a SPACE - SPACE.
 '''
 def print_dictionary(dictionary):
-    
+    '''Function'''
+    sorted_dictionary = sorted(dictionary.keys())
+    for each_word in sorted_dictionary:
+        print(i, '-', dictionary[i])
 def main():
+    '''Main function'''
     dictionary = eval(input())
     print_dictionary(dictionary)
 if __name__ == '__main__':
