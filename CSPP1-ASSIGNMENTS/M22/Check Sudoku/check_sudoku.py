@@ -39,7 +39,11 @@ def main():
         # read a line, split it on SPACE and append row to list
         row = input().split(' ')
         sudoku.append(row)
+        sudoku1 = sudoku
+        input_1 = check_sudoku(sudoku)
     # call solution function and print result to console
-    print(check_sudoku(sudoku))
+    if input is True:
+        print(count(sudoku1))
+    input_2 = count(sudoku1)    
 if __name__ == '__main__':
     main()
