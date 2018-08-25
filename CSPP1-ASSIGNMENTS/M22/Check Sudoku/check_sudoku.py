@@ -42,8 +42,7 @@ def main():
         sudoku1 = sudoku
         input_1 = check_sudoku(sudoku)
     # call solution function and print result to console
-    if input is True:
-        print(count(sudoku1))
-    input_2 = count(sudoku1)    
+    if input1 is True:
+        print(count(sudoku1))    
 if __name__ == '__main__':
     main()
