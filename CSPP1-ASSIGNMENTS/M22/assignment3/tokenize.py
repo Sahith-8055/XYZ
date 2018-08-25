@@ -4,10 +4,11 @@ each word
 '''
 def tokenize(string):
     dictionary1 = {}
-    for keys, values in enumerate(dictionary1):
-    	    
+    
+    return dictionary1
 def main():
-    dictionary = {}
+	n = int(input())
 
+	print(tokenize(string))
 if __name__ == '__main__':
     main()

@@ -6,7 +6,7 @@ import re
 def clean_string(string):
     '''Clean string function'''
     regex = re.compile('[^a-zA-z0-9]')
-    cleared_string = regex.sub('', string)
+    cleared_string = regex.sub('', string).replace('^','')
     return cleared_string
 def main():
     '''Main function'''
